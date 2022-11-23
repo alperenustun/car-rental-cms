@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cars",
+  "info": {
+    "singularName": "car",
+    "pluralName": "cars",
+    "displayName": "Car",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "mainImage": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "required": true
+    },
+    "isRecentlyBooked": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::type.type"
+    },
+    "stars": {
+      "type": "integer",
+      "min": 1,
+      "max": 5,
+      "required": true,
+      "default": 1
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "interiorImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "exteriorImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
